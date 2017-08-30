@@ -4,7 +4,9 @@ jspm_packages
 
 # Serverless directories
 .serverless
+**/.serverless
 .idea
 .DS_Store
+**/.DS_Store
 dist
 tmp
