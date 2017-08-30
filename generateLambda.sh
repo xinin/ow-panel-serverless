@@ -36,6 +36,7 @@ do
     rsync -acv ${DIR}/${lambda}/ ${TMP}/ --recursive
     rsync -acv ${DIR}/lib/ ${TMP}/lib/ --recursive
     rsync -acv ${LIB_TMP}/node_modules/ ${TMP}/node_modules/ --recursive
+    rm -rf node_modules
     cd ${TMP}
     zip -r ${DIR}/dist/${lambda}.zip *
 done
