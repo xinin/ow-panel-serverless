@@ -1,12 +1,11 @@
 'use strict';
 
-const App = require(__dirname+'/../App');
-const Config = App.Config();
-
 
 class Cloud {
 
-    constructor(){
+    constructor(App){
+        this.App = App;
+        let Config = this.App.Config();
         if(Config.cloud === 'aws'){
             this.useAWS();
         } else {
@@ -15,8 +14,8 @@ class Cloud {
     }
 
     useAWS(){
-        let log = require(__dirname+'/../CloudWatch');
-        this.Log = new log();
+        let log = require(__dirname+'/AWS/CloudWatch');
+        this.Log = new log(this.App);
     }
 
 

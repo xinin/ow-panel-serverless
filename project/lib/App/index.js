@@ -1,30 +1,32 @@
 'use strict';
 
-const instance = {};
-
 class App {
 
-    static Config(){
-        if(!instance.Config){
-            instance.Config = require(__dirname+'/../Config');
-        }
-        return instance.Config;
+    constructor(){
+        this.instance = {};
     }
 
-    static Utils(){
-        if(!instance.Utils){
+    Config(){
+        if(!this.instance.Config){
+            this.instance.Config = require(__dirname+'/../Config');
+        }
+        return this.instance.Config;
+    }
+
+    Utils(){
+        if(!this.instance.Utils){
             let utils = require(__dirname+'/../Utils');
-            instance.Utils = new utils();
+            this.instance.Utils = new utils(this);
         }
-        return instance.Utils;
+        return this.instance.Utils;
     }
 
-    static Cloud(){
-        if(!instance.Cloud){
+    Cloud(){
+        if(!this.instance.Cloud){
             let cloud = require(__dirname+'/../Cloud');
-            instance.Cloud = new cloud();
+            this.instance.Cloud = new cloud(this);
         }
-        return instance.Cloud;
+        return this.instance.Cloud;
     }
 
 

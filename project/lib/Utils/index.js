@@ -5,6 +5,10 @@ const jsonlib = require('circular-json');
 
 class Utils {
 
+    constructor(App){
+        this.App = App;
+    }
+
     sayHello(){
         console.log("HELLO!")
     }
