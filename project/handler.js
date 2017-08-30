@@ -1,17 +1,15 @@
 'use strict';
 
 const appLib = require(__dirname + '/lib/App');
+const App = new appLib();
 
 
 module.exports.hello = (event, context, callback) => {
 
-    const App = new appLib();
-
-
     const Cloud = App.Cloud();
 
-    Cloud.Log.info(null, 'Escribiendo info CloudWatch 2');
-    Cloud.Log.error(null, 'Escribiendo error CloudWatch 2');
+    Cloud.Log.info(null, 'Escribiendo info CloudWatch');
+    Cloud.Log.error(null, 'Escribiendo error CloudWatch');
 
     const response = {
         statusCode: 200,
