@@ -1,0 +1,12 @@
+{
+  "name": "OpenWeb-panel",
+  "version": "0.0.0",
+  "dependencies": {
+    "aws-sdk": "2.80.0",
+    "circular-json": "latest"
+  },
+  "engines": {
+    "node": "6.11.0"
+  },
+  "private": true
+}
